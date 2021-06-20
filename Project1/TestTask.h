@@ -22,14 +22,17 @@ void testTask1() {
 void testTask2() {
 	printf("\ntask2.\n\n");
 	char data1[] = "AAA BBB AAA";
+	std::string str1 = data1;
 	RemoveDups(data1);
-	printf("RemoveDups: [%s]\n", data1);
-	char data2[] = "      ";
+	printf("RemoveDups: before=[%s] after=[%s]\n", str1.c_str(), data1);
+	char data2[] = "________";
+	std::string str2 = data2;
 	RemoveDups(data2);
-	printf("RemoveDups: [%s]\n", data2);
-	char data3[] = "      ,      ";
+	printf("RemoveDups: before=[%s] after=[%s]\n", str2.c_str(), data2);
+	char data3[] = "________,________";
+	std::string str3 = data3;
 	RemoveDups(data3);
-	printf("RemoveDups: [%s]\n", data3);
+	printf("RemoveDups: befoe=[%s] after=[%s]\n", str3.c_str(), data3);
 }
 
 //функция для проверки третьей задачи

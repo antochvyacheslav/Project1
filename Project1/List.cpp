@@ -5,7 +5,7 @@
 #include <vector>
 #include"List.h"
 
-const char* List::PATH = "D:\\Projects\\Saber Interactive\\bin_file.bin";
+const char* List::PATH = "D:\\Projects\\Demo\\bin_file.bin";
 
 List::List() : head(NULL), tail(NULL), count(0) {
 
