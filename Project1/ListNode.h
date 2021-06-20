@@ -1,11 +1,11 @@
-#pragma once
+п»ї#pragma once
 
 #include <string>
 
-//структуру ListNode модифицировать нельзя
+//СЃС‚СЂСѓРєС‚СѓСЂСѓ ListNode РјРѕРґРёС„РёС†РёСЂРѕРІР°С‚СЊ РЅРµР»СЊР·СЏ
 struct ListNode {
 	ListNode* prev;
 	ListNode* next;
-	ListNode* rand; //указатель на произвольный элемент данного списка, либо NULL
+	ListNode* rand; //СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РїСЂРѕРёР·РІРѕР»СЊРЅС‹Р№ СЌР»РµРјРµРЅС‚ РґР°РЅРЅРѕРіРѕ СЃРїРёСЃРєР°, Р»РёР±Рѕ NULL
 	std::string data;
 };
