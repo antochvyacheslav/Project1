@@ -1,6 +1,5 @@
 #include <cstdio>
 #include <cstring>
-#include <typeinfo>
 #include <ctime>
 #include <map>
 #include <vector>
@@ -20,6 +19,26 @@ List::~List() {
 		head = tail;
 	}
 	count = 0;
+}
+
+void List::AddToEnd(std::string* _data) {
+	ListNode* temp = new ListNode;
+	temp->next = NULL;
+	temp->rand = NULL;
+	//строки заносить через перемещающий оператор присваивания - чтобы не было лишнего выделения памяти
+	temp->data = std::move(*_data);
+	//если список не пустой
+	if (head != NULL) {
+		temp->prev = tail;
+		tail->next = temp;
+		tail = temp;
+	}
+	//иначе если список пустой
+	else {
+		temp->prev = NULL;
+		head = tail = temp;
+	}
+	count++;
 }
 
 void List::TraceList() {
@@ -107,7 +126,7 @@ void List::Deserialize(FILE* file) {
 		//добавить считанные данные в конец списка
 		//!здесь передаётся адрес созданной выше строчки (чтобы не передавать саму строчку), для которой уже выделена память и в которую уже записаны нужные данные
 		//!внутри метода будет вызван перемещающий оператор присванивания, чтобы не выделять повторно память в куче и не копировать заново данные в выделенную память
-		this->AddToEnd<std::string*>(&str);
+		this->AddToEnd(&str);
 		//после добавления нового элемента в список, сохранить указатель на добавленный элемент - сохранить указатель на последнего узла в списке
 		vlist.push_back(tail);
 	}

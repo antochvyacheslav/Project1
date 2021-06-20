@@ -41,14 +41,12 @@ void testTask2() {
 void testTask3() {
 	printf("\ntask3.\n\n");
 	List list1;
-	list1.AddToEnd("_a_");
-	list1.AddToEnd("_ab_");
-	list1.AddToEnd("_abc_");
-	list1.AddToEnd("_abcd_");
-	list1.AddToEnd("_wxyz_");
-	list1.AddToEnd("_xyz_");
-	list1.AddToEnd("_yz_");
-	list1.AddToEnd("_z_");
+	//массив строк для заполнение списка тестовыми значениями
+	std::string str[] = { "_a_", "_ab_", "_abc_", "_abcd_", "_wxyz_", "_xyz_", "_yz_", "_z_" };
+	for (auto& s : str) {
+		list1.AddToEnd(&s);
+	}
+	//установка указателя на произвольный элемент данного списка
 	list1.SetRandNode();
 	//сохранение в файл
 	FILE* wb_file = fopen(List::PATH, "wb");
